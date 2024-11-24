@@ -1,13 +1,16 @@
 import React from "react";
-import { WhiteboardProvider } from "./context/WhiteboardContext";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Board from "./pages/Board";
+import { WhiteboardProvider } from "./context/WhiteboardContext";
 
 const App: React.FC = () => {
   return (
     <WhiteboardProvider>
-      <div className="h-screen flex flex-col bg-gray-100">
-        <Home />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/board" element={<Board />} />
+      </Routes>
     </WhiteboardProvider>
   );
 };
